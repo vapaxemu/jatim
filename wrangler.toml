@@ -1,0 +1,35 @@
+# Yang wajib diisi
+# 1. nama worker (ubah juga di Cargo.toml)
+# 2. account id cloudflare
+# 3. KV Storage
+# 4. id KV Storage tadi
+# 5. UUID
+
+# ===============[ nama worker ]=================
+name = "jatim"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-05-23"
+minify = true
+
+# ===============[ account id ]==================
+account_id = ""
+workers_dev = true
+
+# ===============[ KV STORAGE ]==================
+[[kv_namespaces]]
+binding = "JATIM"
+id = ""
+
+[build]
+command = "cargo install worker-build && worker-build --release"
+
+[env.dev]
+build = { command = "cargo install worker-build && worker-build --dev" }
+
+# =================[ UUID V4 ]===================
+[vars]
+UUID = ""
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/user/repo/refs/heads/main/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/user/repo/refs/heads/main/web/sub.html"
+
+# ------- Dimodifikasi oleh: @vpnjatimbot -------
